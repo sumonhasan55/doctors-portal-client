@@ -11,7 +11,7 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        
+        loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
@@ -32,10 +32,13 @@ const Login = () => {
     }
 
     const onSubmit = data => {
+      console.log(data)
         signInWithEmailAndPassword(data.email, data.password);
     }
 
-
+if(loading || gLoading){
+   return <button class="btn loading">loading</button>
+}
     
 
    
